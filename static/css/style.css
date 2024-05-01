@@ -1,22 +1,20 @@
 
-@import url('https://fonts.googleapis.com/css?family=Muli:300,400,400i,500,700,800');
-@import url('https://fonts.googleapis.com/css?family=Satisfy');
-@font-face {
-    font-family: calibri;
-    
-}
-
+/* -------------------------------------------------------------- */
+/* Import font
+----------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap");
+ 
 
 /*===============
 ***General Styling 
 ===============*/
 html,body{
-	font-family: calibri;
+    font-family: "Inter", sans-serif;
     background: #fff;
 }
 
 .bio{
-    text-align: justify !important; width: 1100px; color: #000; font-family: calibri; margin-left:5%;text-decoration: none;outline: none;
+    text-align: justify !important; width: 1100px; color: #000;   font-family: "Inter", sans-serif;    margin-left:5%;text-decoration: none;outline: none;
 }
 
 body {
@@ -480,7 +478,7 @@ header.sticky {
 }
 
 .land-meta > h1 {
-    font-family: calibri;
+    font-family: "Inter", sans-serif;
 }
 
 .land-meta > p {
@@ -499,7 +497,7 @@ header.sticky {
 }
 
 .friend-logo > span {
-    font-family: calibri;
+    font-family: "Inter", sans-serif;
     font-size: 200px;
     position: relative;
 }
@@ -771,7 +769,7 @@ header.sticky {
 }
 
 .timeline-info {
-    background: ##b0b3b8 none repeat scroll 0 0;
+    background: #b0b3b8 none repeat scroll 0 0;
     display: block;
     line-height: 59px;
     width: 100%;
@@ -2211,7 +2209,7 @@ footer .logo {
 
 .logo > h4 {
     display: inline-block;
-    font-family:calibri;
+    font-family: "Inter", sans-serif;
     margin-bottom: 0;
     vertical-align: middle;
     width: 80%;
@@ -2375,7 +2373,7 @@ footer .logo {
 .toggle-setting > span {
     color: #4f4f4f;
     float: left;
-    font-family: calibri;
+    font-family: "Inter", sans-serif;
     font-size: 13px;
     letter-spacing: 0.3px;
 }
@@ -3022,7 +3020,7 @@ li.google {
 
 .bg-cntct {
     bottom: 80px;
-    font-family: calibri;
+    font-family: "Inter", sans-serif;
     font-size: 90px;
     opacity: 0.1;
     position: absolute;
@@ -4616,7 +4614,7 @@ canvas {
 
 .mh-text > a {
     display: inline-block;
-    font-family: calibri;
+    font-family: "Inter", sans-serif;
     font-size: 20px;
     vertical-align: middle;
 }
@@ -5995,7 +5993,7 @@ form.filter-form input {
 .baner-inf > span {
     color: #000;
     display: inline-block;
-    font-family: calibri;
+    font-family: "Inter", sans-serif;
     font-size: 60px;
     margin-right: 60px;
     vertical-align: middle;
@@ -10036,5 +10034,3 @@ aside.sidebar.full-style {
     letter-spacing: 0.5px;
     text-transform: uppercase;
 }
-
-
