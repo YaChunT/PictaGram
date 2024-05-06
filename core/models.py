@@ -2,10 +2,18 @@ from django.db import models
 from django.contrib.auth import get_user_model
 import uuid
 from datetime import datetime
+# Add necessary imports
+from typing import Optional
+import pyotp
+import qrcode
+import qrcode.image.svg
+from django.conf import settings
+from django.db import models
+import uuid
 
 User = get_user_model()
 
-# Create your models here.
+
 class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     id_user = models.IntegerField()
@@ -15,6 +23,7 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
+
 
 class Post(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
