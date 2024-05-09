@@ -68,10 +68,10 @@ def upload(request):
         new_post = Post.objects.create(user=user, image=image, caption=caption)
         new_post.save()
 
-        return redirect('/')
+        return redirect('/index')
 
     else:
-        return redirect('/')
+        return redirect('/index')
 
 @login_required(login_url='signin')
 def search(request):
@@ -109,12 +109,56 @@ def like_post(request):
         new_like.save()
         post.no_of_likes = post.no_of_likes+1
         post.save()
-        return redirect('/')
+        return redirect('/index')
     else:
         like_filter.delete()
         post.no_of_likes = post.no_of_likes-1
         post.save()
-        return redirect('/')
+        return redirect('/index')
+
+# from django.shortcuts import render, get_object_or_404
+# from django.contrib.auth.models import User
+# from .models import Profile, Post, FollowersCount
+# from django.contrib.auth.decorators import login_required
+
+# @login_required(login_url='signin')
+# def profile(request, pk):
+#     # Retrieve User object based on the primary key (pk)
+#     user_object = get_object_or_404(User, pk=pk)
+    
+#     # Retrieve Profile object associated with the User
+#     user_profile = get_object_or_404(Profile, user=user_object)
+    
+#     # Retrieve all posts by the User
+#     user_posts = Post.objects.filter(user=user_object)
+    
+#     # Calculate the number of posts
+#     user_post_length = user_posts.count()
+
+#     # Determine the button text for follow/unfollow
+#     follower = request.user.username
+#     user = user_object.username
+
+#     if FollowersCount.objects.filter(follower=follower, user=user_object).exists():
+#         button_text = 'Unfollow'
+#     else:
+#         button_text = 'Follow'
+
+#     # Count the number of followers and following
+#     user_followers = FollowersCount.objects.filter(user=user_object).count()
+#     user_following = FollowersCount.objects.filter(follower=user_object).count()
+
+#     context = {
+#         'user_object': user_object,
+#         'user_profile': user_profile,
+#         'user_posts': user_posts,
+#         'user_post_length': user_post_length,
+#         'button_text': button_text,
+#         'user_followers': user_followers,
+#         'user_following': user_following,
+#     }
+#     return render(request, 'profile.html', context)
+
 
 @login_required(login_url='signin')
 def profile(request, pk):
@@ -161,7 +205,7 @@ def follow(request):
             new_follower.save()
             return redirect('/profile/'+user)
     else:
-        return redirect('/')
+        return redirect('/index')
 
 @login_required(login_url='signin')
 def settings(request):
@@ -239,7 +283,7 @@ def signin(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect('/')
+            return redirect('/index')
         else:
             messages.info(request, 'Credentials Invalid')
             return redirect('signin')
