@@ -287,7 +287,7 @@ def signin(request):
 
             if user is not None:
                 auth.login(request, user)
-                return redirect('/index')
+                return redirect('/account/two_factor/setup/')
             else:
                 messages.error(request, 'Invalid Credentials')
                 return redirect('signin')
