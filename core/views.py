@@ -6,6 +6,7 @@ from .models import Profile, Post, LikePost, FollowersCount
 from itertools import chain
 import random
 from django.contrib.auth.decorators import login_required
+from .forms import LoginForm
 
 
 # Create your views here.
@@ -274,22 +275,30 @@ def signup(request):
         return render(request, 'signup.html')
 
 def signin(request):
-
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            # Process the login form here
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            # Authenticate user, redirect, etc.
 
-        user = auth.authenticate(username=username, password=password)
+            user = auth.authenticate(username=username, password=password)
 
-        if user is not None:
-            auth.login(request, user)
-            return redirect('/index')
-        else:
-            messages.info(request, 'Credentials Invalid')
-            return redirect('signin')
+            if user is not None:
+                auth.login(request, user)
+                return redirect('/index')
+            else:
+                messages.error(request, 'Invalid Credentials')
+                return redirect('signin')
     else:
-        return render(request, 'signin.html')
-        
+        # If request method is not POST (e.g., GET), initialize an empty LoginForm
+        form = LoginForm()
+
+
+    return render(request, 'signin.html', {'form': form})
+    
+ 
 @login_required(login_url='signin')
 def logout(request):
     auth.logout(request)

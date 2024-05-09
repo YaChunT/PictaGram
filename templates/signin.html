@@ -17,14 +17,47 @@
                 <h5>{{ message }}</h5>
             {% endfor %}
         </div>
-        <form action="" method="POST">
+        <!-- <form action="" method="POST">
             {% csrf_token %}
             <input type="text" name="username" placeholder="Username" class="bg-gray-200 mb-2 shadow-none dark:bg-gray-800" style="border: 1px solid #d3d5d8 !important;">
             <input type="password" name="password" placeholder="Password" class="bg-gray-200 mb-2 shadow-none dark:bg-gray-800" style="border: 1px solid #d3d5d8 !important;">
             <button type="submit" class="bg-gradient-to-br from-pink-500 py-3 rounded-md text-white text-xl to-red-400 w-full">Login</button>
             <div class="text-center mt-5 space-x-2">
                 <p class="text-base"> Not registered? <a href="/signup" class=""> Create an account </a></p>
-            </div>
+            </div> -->
+
+                    <!-- login.html -->
+        <!-- </form> -->
+
+        <!-- signin.html -->
+        <form method="post">
+        {% csrf_token %}
+        <div>
+            {{ form.username.label_tag }}
+            {{ form.username }}
+            {% if form.username.errors %}
+                <div class="error">{{ form.username.errors }}</div>
+            {% endif %}
+        </div>
+        <div>
+            {{ form.password.label_tag }}
+            {{ form.password }}
+            {% if form.password.errors %}
+                <div class="error">{{ form.password.errors }}</div>
+            {% endif %}
+        </div>
+        <button type="submit" class="bg-gradient-to-br from-pink-500 py-3 rounded-md text-white text-xl to-red-400 w-full">Sign In</button>
         </form>
+
+        {% if messages %}
+        {% for message in messages %}
+            <div>{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+
+        <div class="text-center mt-5 space-x-2">
+        <p class="text-base">Not registered? <a href="/signup" class="">Create an account</a></p>
+        </div>
+
     </div>
 {% endblock %}
