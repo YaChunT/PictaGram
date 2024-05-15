@@ -60,10 +60,13 @@ PictaGram ensures that users can secure their accounts with multiple layers of p
 <div align="center">
 <img width="1024" alt="Screenshot 2024-05-15 at 5 53 04 PM" src="https://github.com/YaChunT/PictaGram/assets/162515094/eee0b2d1-7a10-4728-82ba-93713dcda2f0">
 </div>
+
+
 - **Home page for web application**
 <div align="center">
 <img width="1024" alt="Screenshot 2024-05-15 at 5 54 22 PM" src="https://github.com/YaChunT/PictaGram/assets/162515094/2acce733-b88b-46e4-ba0a-db35906296e6">
 </div>
+
 
 
 <br> <!-- Line break -->
