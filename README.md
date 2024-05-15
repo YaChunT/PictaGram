@@ -72,7 +72,7 @@ PictaGram ensures that users can secure their accounts with multiple layers of p
 
 Follow these steps to get the project up and running on your local machine.
 
-## Prerequisites
+### Prerequisites
 
 Ensure you have the following installed on your system:
 - Python 3.8+
@@ -153,7 +153,7 @@ git clone https://github.com/YaChunT/PictaGram.git
 
     Your application should now be running at `http://127.0.0.1:8000/`.
 
-## Running Tests
+### Running Tests
 
 To run tests for the application, use the following command:
 
