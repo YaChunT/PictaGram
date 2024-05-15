@@ -58,8 +58,13 @@ PictaGram ensures that users can secure their accounts with multiple layers of p
 ## User Interface 📊 
 - **Sign-in page for web application**
 <div align="center">
-<img width="1506" alt="Screenshot 2024-03-28 at 12 17 49 AM" src="https://github.com/YaChunT/student_management_system/assets/162515094/8edefba6-8586-4f4a-9039-5e42b29a35ee">
+<img width="1024" alt="Screenshot 2024-05-15 at 5 53 04 PM" src="https://github.com/YaChunT/PictaGram/assets/162515094/eee0b2d1-7a10-4728-82ba-93713dcda2f0">
 </div>
+- **Home page for web application**
+<div align="center">
+<img width="1024" alt="Screenshot 2024-05-15 at 5 54 22 PM" src="https://github.com/YaChunT/PictaGram/assets/162515094/2acce733-b88b-46e4-ba0a-db35906296e6">
+</div>
+
 
 <br> <!-- Line break -->
 <br> <!-- Line break -->
@@ -67,40 +72,91 @@ PictaGram ensures that users can secure their accounts with multiple layers of p
 
 Follow these steps to get the project up and running on your local machine.
 
-### - Prerequisites
+## Prerequisites
 
-- Docker installed on your system
+Ensure you have the following installed on your system:
+- Python 3.8+
+- pip (Python package installer)
+- virtualenv (for creating virtual environments)
 
-### - Run Database with Docker
 
-1. Clone this repository:
+### Installation
+1. **Clone the Repository**
 
-    ```bash
-    git clone https://github.com/YaChunT/student_management_system.git
-    ```
+```bash
+git clone https://github.com/YaChunT/PictaGram.git
+```
 
-2. Navigate into the project directory:
-
-    ```bash
-    cd student_management_system
-    ```
-
-3. Build the Docker image:
+2. **Navigate into the project directory**
 
     ```bash
-    docker-compose up --build
+    cd "Social Book"
+    cd social_book
     ```
 
-### - Run the Spring Boot Application
-1. Build the project using Maven:
-    ```bash
-    ./mvnw clean package
-    ```
-2. Run the application:
-    ```bash
-    java -jar target/student_management_system-0.0.1-SNAPSHOT.jar
-    ```
-### - Access the application:
+3. **(Optional) Create and Activate a Virtual Environment**
 
-    Open http://localhost:8080 in your web browser.
+    It's recommended to use a virtual environment to manage dependencies:
+
+    - Create a virtual environment:
+        ```bash
+        python3 -m venv venv
+        ```
+
+    - Activate the virtual environment:
+        - On Windows:
+            ```bash
+            venv\Scripts\activate
+            ```
+        - On macOS/Linux:
+            ```bash
+            source venv/bin/activate
+            ```
+4. **Install Dependencies**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+5. **Set Up the Database**
+
+    Apply migrations to set up the database schema:
+
+    ```bash
+    python3 manage.py migrate
+    ```
+6. **Create a Superuser**
+
+    Create a superuser to access the Django admin interface:
+
+    ```bash
+    python3 manage.py createsuperuser
+    ```
+
+    Follow the prompts to create your admin user with your own chosen username and password.
+
+7. **(Optional) Collect Static Files**
+
+    This step is typically necessary for production environments, but you can also run it during development to test the static file collection process:
+
+    ```bash
+    python3 manage.py collectstatic
+    ```
+
+8. **Run the Development Server**
+
+    Start the Django development server:
+
+    ```bash
+    python3 manage.py runserver
+    ```
+
+    Your application should now be running at `http://127.0.0.1:8000/`.
+
+## Running Tests
+
+To run tests for the application, use the following command:
+
+```bash
+python3 manage.py test
    
