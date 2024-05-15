@@ -154,7 +154,7 @@ git clone https://github.com/YaChunT/PictaGram.git
     python3 manage.py runserver
     ```
 
-    Your application should now be running at `http://127.0.0.1:8000/`.
+    Your application should now be running at `http://127.0.0.1:8000/signin/`.
 
 ### Running Tests
 
